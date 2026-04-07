@@ -18,6 +18,7 @@ type CMSLinkType = {
   size?: ButtonProps['size'] | null
   type?: 'custom' | 'reference' | null
   url?: string | null
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
 /** Returns true if a CMSLink-style link object points to a valid destination */
@@ -46,6 +47,7 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
     reference,
     size: sizeFromProps,
     url,
+    onClick,
   } = props
 
   let href = url
@@ -73,7 +75,7 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
   /* Ensure we don't break any styles set by richText */
   if (appearance === 'inline') {
     return (
-      <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
+      <Link className={cn(className)} href={href || url || ''} onClick={onClick} {...newTabProps}>
         {label && label}
         {children && children}
       </Link>
@@ -81,8 +83,8 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
   }
 
   return (
-    <Button asChild className={className} size={size} variant={appearance}>
-      <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
+    <Button asChild className={className} size={size} variant={appearance} onClick={onClick as any}>
+      <Link className={cn(className)} href={href || url || ''} onClick={onClick} {...newTabProps}>
         {label && label}
         {children && children}
       </Link>

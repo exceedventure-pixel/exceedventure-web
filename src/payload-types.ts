@@ -1371,6 +1371,9 @@ export interface Header {
                 url?: string | null;
                 label: string;
               };
+              icon?: string | null;
+              description?: string | null;
+              iconColor?: string | null;
               subSubLinks?:
                 | {
                     link: {
@@ -1394,6 +1397,18 @@ export interface Header {
               id?: string | null;
             }[]
           | null;
+        id?: string | null;
+      }[]
+    | null;
+  enableVentures?: boolean | null;
+  venturesLabel?: string | null;
+  venturesPage?: (number | null) | Page;
+  ventureItems?:
+    | {
+        name: string;
+        page: number | Page;
+        lightLogo?: (number | null) | Media;
+        darkLogo?: (number | null) | Media;
         id?: string | null;
       }[]
     | null;
@@ -1499,6 +1514,9 @@ export interface HeaderSelect<T extends boolean = true> {
                     url?: T;
                     label?: T;
                   };
+              icon?: T;
+              description?: T;
+              iconColor?: T;
               subSubLinks?:
                 | T
                 | {
@@ -1515,6 +1533,18 @@ export interface HeaderSelect<T extends boolean = true> {
                   };
               id?: T;
             };
+        id?: T;
+      };
+  enableVentures?: T;
+  venturesLabel?: T;
+  venturesPage?: T;
+  ventureItems?:
+    | T
+    | {
+        name?: T;
+        page?: T;
+        lightLogo?: T;
+        darkLogo?: T;
         id?: T;
       };
   updatedAt?: T;

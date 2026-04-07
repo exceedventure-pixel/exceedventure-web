@@ -1,0 +1,1 @@
+const fs = require('fs'); let c = fs.readFileSync('src/app/(frontend)/globals.css', 'utf8'); c = c.replace('body {\r\n      @apply bg-base-100 text-base-content min-h-[100vh] flex flex-col;\r\n}', 'body {\n      @apply bg-base-100 text-base-content min-h-[100vh] flex flex-col;\n  }\n}'); fs.writeFileSync('src/app/(frontend)/globals.css', c);

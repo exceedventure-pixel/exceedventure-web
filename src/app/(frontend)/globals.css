@@ -93,10 +93,10 @@
   --card-foreground: oklch(14.5% 0 0deg);
   --popover: oklch(100% 0 0deg);
   --popover-foreground: oklch(14.5% 0 0deg);
-  --primary: oklch(20.5% 0 0deg);
-  --primary-foreground: oklch(98.5% 0 0deg);
-  --secondary: oklch(97% 0 0deg);
-  --secondary-foreground: oklch(20.5% 0 0deg);
+  --primary: #15246D;
+  --primary-foreground: oklch(100% 0 0deg);
+  --secondary: #00C2BE;
+  --secondary-foreground: oklch(0% 0 0deg);
   --muted: oklch(97% 0 0deg);
   --muted-foreground: oklch(55.6% 0 0deg);
   --accent: oklch(97% 0 0deg);
@@ -132,10 +132,10 @@
   --card-foreground: oklch(98.5% 0 0deg);
   --popover: oklch(14.5% 0 0deg);
   --popover-foreground: oklch(98.5% 0 0deg);
-  --primary: oklch(98.5% 0 0deg);
-  --primary-foreground: oklch(20.5% 0 0deg);
-  --secondary: oklch(26.9% 0 0deg);
-  --secondary-foreground: oklch(98.5% 0 0deg);
+  --primary: #00C2BE;
+  --primary-foreground: oklch(0% 0 0deg);
+  --secondary: oklch(52% 0.223 3.958);
+  --secondary-foreground: oklch(12.818% 0.005 229.389);
   --muted: oklch(26.9% 0 0deg);
   --muted-foreground: oklch(70.8% 0 0deg);
   --accent: oklch(26.9% 0 0deg);
@@ -210,15 +210,228 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground min-h-[100vh] flex flex-col;
+      @apply bg-base-100 text-base-content min-h-[100vh] flex flex-col;
   }
-}
-
-html {
-  opacity: 0;
 }
 
 html[data-theme='dark'],
 html[data-theme='light'] {
   opacity: initial;
+}
+@plugin "daisyui";
+
+@theme {
+  --animate-pulse-slow: pulse-slow 3s ease-in-out infinite;
+  --keyframes-pulse-slow: pulse-slow;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: false;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(98% 0 0);
+  --color-base-300: oklch(95% 0 0);
+  --color-base-content: oklch(21% 0.006 285.885);
+  --color-primary: #15246D;
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: #00C2BE;
+  --color-secondary-content: oklch(0% 0 0);
+  --color-accent: oklch(51% 0.262 276.966);
+  --color-accent-content: oklch(100% 0 0);
+  --color-neutral: oklch(26% 0.007 34.298);
+  --color-neutral-content: oklch(92% 0.004 286.32);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(64% 0.2 131.684);
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(100% 0 0);
+  --color-error: oklch(58% 0.253 17.585);
+  --color-error-content: oklch(100% 0 0);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(0% 0 0);
+  --color-base-200: oklch(20% 0 0);
+  --color-base-300: oklch(30% 0 0);
+  --color-base-content: oklch(90% 0 0);
+  --color-primary: #00C2BE;
+  --color-primary-content: oklch(0% 0 0);
+  --color-secondary: oklch(52% 0.223 3.958);
+  --color-secondary-content: oklch(12.818% 0.005 229.389);
+  --color-accent: oklch(67.271% 0.167 35.791);
+  --color-accent-content: oklch(13.454% 0.033 35.791);
+  --color-neutral: oklch(27.441% 0.013 253.041);
+  --color-neutral-content: oklch(85.488% 0.002 253.041);
+  --color-info: oklch(68% 0.169 237.323);
+  --color-info-content: oklch(100% 0 0);
+  --color-success: oklch(70.226% 0.094 156.596);
+  --color-success-content: oklch(14.045% 0.018 156.596);
+  --color-warning: oklch(64% 0.222 41.116);
+  --color-warning-content: oklch(100% 0 0);
+  --color-error: oklch(57% 0.245 27.325);
+  --color-error-content: oklch(100% 0 0);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+* {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+/* Theme transitions - only apply after initial paint to avoid blocking FCP */
+html.theme-ready, html.theme-ready body {
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================
+   StackedCarousel styles
+   ============================ */
+.card-card {
+  transition: all 400ms ease;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 20px;
+  height: 400px;
+  position: relative;
+  background-color: #111;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.image-section {
+  position: relative;
+  height: 70%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cover-image {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.text-section {
+  height: 30%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.center-slide .card-card {
+  border: 2px solid rgba(88, 76, 244, 0.5);
+  box-shadow: 0 0 20px rgba(88, 76, 244, 0.3), 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 400ms ease;
+  z-index: 1;
+}
+
+.card-wrapper:not(.center-slide) .card-card:hover {
+  transform: scale(1.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-button {
+  position: absolute;
+  top: 43%;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.card-button.left {
+  left: -80px;
+}
+
+.card-button.right {
+  right: -80px;
+}
+
+@media (max-width: 1280px) {
+  .card-button.left { left: 10px; }
+  .card-button.right { right: 10px; }
+}
+
+@media (max-width: 768px) {
+  .card-card { height: 280px; }
+  .text-section { padding: 1rem; }
 }

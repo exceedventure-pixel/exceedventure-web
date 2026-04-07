@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Generate Types",
+			"type": "shell",
+			"command": "pnpm generate:types",
+			"isBackground": false,
+			"group": "build"
+		},
+		{
+			"label": "Generate Types",
+			"type": "shell",
+			"command": "pnpm generate:types",
+			"isBackground": false,
+			"group": "build"
+		}
+	]
+}

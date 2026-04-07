@@ -17,6 +17,11 @@ export const Footer: GlobalConfig = {
     {
       name: 'columns',
       type: 'array',
+      admin: {
+        components: {
+          RowLabel: '@/Header/RowLabel#RowLabel',
+        },
+      },
       fields: [
         {
           name: 'title',
@@ -26,6 +31,11 @@ export const Footer: GlobalConfig = {
         {
           name: 'navItems',
           type: 'array',
+          admin: {
+            components: {
+              RowLabel: '@/Header/RowLabel#RowLabel',
+            },
+          },
           fields: [
             link({
               appearances: false,
@@ -33,6 +43,11 @@ export const Footer: GlobalConfig = {
             {
               name: 'subLinks',
               type: 'array',
+              admin: {
+                components: {
+                  RowLabel: '@/Header/RowLabel#RowLabel',
+                },
+              },
               fields: [
                 link({
                   appearances: false,

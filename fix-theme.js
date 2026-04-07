@@ -1,0 +1,1 @@
+const fs = require('fs'); const content = fs.readFileSync('src/app/(frontend)/globals.css', 'utf8'); const modified = content.replace(/--color-(primary|secondary|accent|success|warning|error)\\b[^;]*;/g, '').replace(/--(primary|secondary|accent|success|warning|error)\\b[^;]*;/g, ''); fs.writeFileSync('src/app/(frontend)/globals.css', modified);

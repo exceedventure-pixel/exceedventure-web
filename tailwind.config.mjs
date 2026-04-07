@@ -2,6 +2,9 @@
 const config = {
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-montserrat)'],
+      },
       typography: () => ({
         DEFAULT: {
           css: [
