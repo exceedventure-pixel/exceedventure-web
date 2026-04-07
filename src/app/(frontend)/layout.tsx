@@ -18,11 +18,11 @@ import { getCachedGlobal } from '@/utilities/getGlobals'
 import type { SiteSetting } from '@/payload-types'
 
 const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
+})
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()

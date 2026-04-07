@@ -55,10 +55,30 @@ async function run() {
   const ventures = await createOrGetPage('Ventures', 'ventures', undefined, 'default')
 
   // CREATE SERVICE CATEGORIES
-  const websites = await createOrGetPage('Websites & Web Systems', 'websites-web-systems', services.id, 'default')
-  const automation = await createOrGetPage('Automation & AI Integration', 'automation-ai', services.id, 'default')
-  const mediaBuying = await createOrGetPage('Media Buying & SEO', 'media-buying-seo', services.id, 'default')
-  const creative = await createOrGetPage('Creative Assets & Branding', 'creative-assets-branding', services.id, 'default')
+  const websites = await createOrGetPage(
+    'Websites & Web Systems',
+    'websites-web-systems',
+    services.id,
+    'default',
+  )
+  const automation = await createOrGetPage(
+    'Automation & AI Integration',
+    'automation-ai',
+    services.id,
+    'default',
+  )
+  const mediaBuying = await createOrGetPage(
+    'Media Buying & SEO',
+    'media-buying-seo',
+    services.id,
+    'default',
+  )
+  const creative = await createOrGetPage(
+    'Creative Assets & Branding',
+    'creative-assets-branding',
+    services.id,
+    'default',
+  )
 
   // CREATE VENTURE PAGES
   const cc = await createOrGetPage('Corporate Crafts', 'corporate-crafts', ventures.id, 'default')
@@ -91,7 +111,7 @@ async function run() {
             makeRef(websites, 'WEBSITES & WEB SYSTEMS'),
             makeRef(automation, 'AUTOMATION & AI INTEGRATION'),
             makeRef(mediaBuying, 'MEDIA BUYING & SEO'),
-            makeRef(creative, 'CREATIVE ASSETS & BRANDING')
+            makeRef(creative, 'CREATIVE ASSETS & BRANDING'),
           ],
         },
         makeRef(works, 'WORKS'),
