@@ -46,9 +46,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const siteSettings = (await getCachedGlobal('site-settings', 1)().catch(
     () => null,
   )) as SiteSetting | null
-  const title = siteSettings?.siteTitle || 'Assistophere'
+  const title = siteSettings?.siteTitle || 'Exceed Venture'
   const siteIconUrl =
-    typeof siteSettings?.siteIcon === 'object' ? siteSettings?.siteIcon?.url : '/favicon.ico'
+    typeof siteSettings?.siteIcon === 'object' ? siteSettings?.siteIcon?.url : '/fabicon-site.svg'
 
   return {
     title: {
@@ -57,12 +57,12 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     icons: siteIconUrl
       ? [{ rel: 'icon', url: siteIconUrl }]
-      : [{ rel: 'icon', url: '/favicon.ico' }],
+      : [{ rel: 'icon', url: '/fabicon-site.svg' }],
     metadataBase: new URL(getServerSideURL()),
     openGraph: mergeOpenGraph(),
     twitter: {
       card: 'summary_large_image',
-      creator: '@assistophere',
+      creator: '@exceedventure',
     },
   }
 }

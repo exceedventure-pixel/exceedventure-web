@@ -27,7 +27,7 @@ export async function Footer() {
         <div className="flex flex-col items-start gap-6 max-w-sm">
           <Link className="flex items-center" href="/">
             <Logo
-              className="h-10 w-auto"
+              className="h-14 w-auto"
               lightLogoUrl={lightLogoUrl ?? undefined}
               darkLogoUrl={darkLogoUrl ?? undefined}
             />
@@ -81,7 +81,7 @@ export async function Footer() {
       <div className="border-t border-border mt-12 bg-muted/30">
         <div className="container mx-auto py-6 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground gap-4">
           <p>
-            &copy; {new Date().getFullYear()} {siteSettings?.siteTitle || 'Assistophere'}. All
+            &copy; {new Date().getFullYear()} {siteSettings?.siteTitle || 'Exceed Venture'}. All
             rights reserved.
           </p>
         </div>

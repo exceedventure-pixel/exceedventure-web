@@ -22,10 +22,10 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   admin: {
     meta: {
-      titleSuffix: '- Assistophere',
+      titleSuffix: '- Exceed Venture',
       icons: [
         {
-          url: '/favicon-white.svg',
+          url: '/fabicon-cms.svg',
         },
       ],
     },

@@ -45,7 +45,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, siteSettings }
           <Logo
             loading="eager"
             priority="high"
-            className="h-8 w-auto"
+            className="h-13 w-auto"
             lightLogoUrl={lightLogoUrl ?? undefined}
             darkLogoUrl={darkLogoUrl ?? undefined}
           />

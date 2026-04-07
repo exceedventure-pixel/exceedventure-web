@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { cn } from '@/utilities/ui'
 import React from 'react'
 
 interface Props {
@@ -21,54 +21,33 @@ export const Logo = (props: Props) => {
   const loading = loadingFromProps || 'lazy'
   const priority = priorityFromProps || 'low'
 
-  const defaultLogo = '/ASSISTOPHERE%20SITE%20LOGO.svg'
-
-  if (lightLogoUrl && darkLogoUrl) {
-    return (
-      <div className={clsx('relative flex', className)}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          alt="Site Logo Light"
-          width={193}
-          height={34}
-          loading={loading}
-          fetchPriority={priority}
-          decoding="async"
-          className="w-auto h-full dark:hidden object-contain"
-          src={lightLogoUrl}
-        />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          alt="Site Logo Dark"
-          width={193}
-          height={34}
-          loading={loading}
-          fetchPriority={priority}
-          decoding="async"
-          className="w-auto h-full hidden dark:block object-contain"
-          src={darkLogoUrl}
-        />
-      </div>
-    )
-  }
-
-  const srcUrl = lightLogoUrl || darkLogoUrl || defaultLogo
+  const finalLightLogoUrl = lightLogoUrl || '/exceed-venture-logo.svg'
+  const finalDarkLogoUrl = darkLogoUrl || '/exceed-venture-logo-dark.svg'
 
   return (
-    /* eslint-disable-next-line @next/next/no-img-element */
-    <img
-      alt="Assistophere Logo"
-      width={193}
-      height={34}
-      loading={loading}
-      fetchPriority={priority}
-      decoding="async"
-      className={clsx(
-        'max-w-[12rem] w-full h-auto',
-        !lightLogoUrl && !darkLogoUrl && 'invert dark:invert-0',
-        className,
-      )}
-      src={srcUrl}
-    />
+    <div className={cn('relative flex items-center', className)}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        alt="Exceed Venture Logo"
+        width={193}
+        height={34}
+        loading={loading}
+        fetchPriority={priority}
+        decoding="async"
+        className="w-auto h-full dark:hidden object-contain"
+        src={finalLightLogoUrl}
+      />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        alt="Exceed Venture Logo Dark"
+        width={193}
+        height={34}
+        loading={loading}
+        fetchPriority={priority}
+        decoding="async"
+        className="w-auto h-full hidden dark:block object-contain"
+        src={finalDarkLogoUrl}
+      />
+    </div>
   )
 }

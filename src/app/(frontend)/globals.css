@@ -69,19 +69,19 @@
 
   @variant lg {
     .container {
-      max-width: var(--breakpoint-lg);
+      max-width: 90%;
     }
   }
 
   @variant xl {
     .container {
-      max-width: var(--breakpoint-xl);
+      max-width: 90%;
     }
   }
 
   @variant 2xl {
     .container {
-      max-width: var(--breakpoint-2xl);
+      max-width: 85%;
     }
   }
 }
