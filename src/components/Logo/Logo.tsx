@@ -1,4 +1,4 @@
-import { cn } from '@/utilities/ui'
+import clsx from 'clsx'
 import React from 'react'
 
 interface Props {
@@ -25,7 +25,7 @@ export const Logo = (props: Props) => {
   const finalDarkLogoUrl = darkLogoUrl || '/exceed-venture-logo-dark.svg'
 
   return (
-    <div className={cn('relative flex items-center', className)}>
+    <div className={clsx('relative flex items-center', className)}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         alt="Exceed Venture Logo"

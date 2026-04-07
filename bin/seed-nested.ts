@@ -16,7 +16,7 @@ async function run() {
   const createOrGetPage = async (
     title: string,
     customSlug?: string,
-    parentId?: string,
+    parentId?: string | number,
     template?: string,
   ) => {
     // Add small delay to help MongoDB transactions settle
